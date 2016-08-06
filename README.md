@@ -45,3 +45,9 @@ public class MainActivity extends Activity implements OnClickListener{
   public void onClick(View v){}
 }
 ```
+######14
+3rd way,
+```
+android:onCick="changeMethod"
+```
+(no parentheses)
