@@ -120,15 +120,23 @@ protected void onSaveInstanceState(Bundle outState){
 layout,layout-land
 
 ######33Handling configuration
+not recommended
 ```
 <activity android:name=".MainActivity" android:configChanges="orientation|screenSize">
 </activity>
 ```
 then
 ```
+private ImageView imageView;
+imageView
 @Override
 public void onConfigurationChanged(Configuration newConfig{
   super.onConfigurationChanged(newConfig);
   Log.i(TAG,"chnaged");
+  //change bg image
+  if(newConfig.orientation==Congiguration.ORIENTATION_PORTRAIT){
+  Toast.makeText(getApplicationContext(),"portrait",Toast.LENTH.SHORT).show();
+  imageView.setImagesource(R.drawable.pictureportrait);
+  }
 }
 ```
