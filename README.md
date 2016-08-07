@@ -88,3 +88,13 @@ startActivity(intent);
 onCreate->onStart(visible,but user cannot use)->onResume->Activity Visible->onPause(when calling second)
 (second) onCreate->onStart->onResume->(main)onStop.
 When user quit second, (second)onPause,but still visible to user,(main)onRestart,(second)onStop,onDestroy
+
+#####26 Summary
+onCreate:called when activity is first create,create views,attach layouts(setContentView),init var
+#####
+######27 Behavior of activity lifecycle when the screen is rotated
+when rotating, onPause->onStop->onDestroy->onCreate->onStart->onResume
+
+######29 Impact of screen rotation
+views do not retain state:TextView,Button  
+Retain:EditText,Checkbox,Switch,RadioButton
