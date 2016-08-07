@@ -26,6 +26,7 @@ public void onClickk(View v){
 }
 ```
 
+
 so:two ways to memorize.
 ```
 buttonname.setOnClickListener(new View.OnClickListener() {
@@ -51,3 +52,35 @@ public class MainActivity extends Activity implements OnClickListener{
 android:onCick="changeMethod"
 ```
 (no parentheses)
+
+
+######16
+explicit Intent: target activity is known  
+implicit Intent: target activity is not known....
+######19
+```
+Intent intent = new Intent(MainActivity.this,Second.class);
+Bundle b = new Bundle();
+b.putString(k,v);
+b.putInt(k,v);
+intent.putExtras(b);
+startActivity(intent);
+}
+});
+}
+}
+```
+SecondActivity
+```
+private static final String TAG = SecondActivity.class.getSimpleName();
+Intent intent = getIntent();
+Bundle b = intent.getExtras();
+String name = b.getString("name");
+Log.i(TAG,name);
+```
+intent- second way
+```
+Intent intent = new Intent(MainActivity.this,Second.class);
+intent.putExtra(k,v);
+startActivity(intent);
+```
