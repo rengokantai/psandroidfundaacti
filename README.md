@@ -115,3 +115,20 @@ protected void onSaveInstanceState(Bundle outState){
   super.onSaveInstanceState(outState);
   outState.putString("k",btn.getText().toString());
 }
+```
+######32
+layout,layout-land
+
+######33Handling configuration
+```
+<activity android:name=".MainActivity" android:configChanges="orientation|screenSize">
+</activity>
+```
+then
+```
+@Override
+public void onConfigurationChanged(Configuration newConfig{
+  super.onConfigurationChanged(newConfig);
+  Log.i(TAG,"chnaged");
+}
+```
