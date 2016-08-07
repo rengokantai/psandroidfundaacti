@@ -84,3 +84,7 @@ Intent intent = new Intent(MainActivity.this,Second.class);
 intent.putExtra(k,v);
 startActivity(intent);
 ```
+######23 Exploring Activities
+onCreate->onStart(visible,but user cannot use)->onResume->Activity Visible->onPause(when calling second)
+(second) onCreate->onStart->onResume->(main)onStop.
+When user quit second, (second)onPause,but still visible to user,(main)onRestart,(second)onStop,onDestroy
