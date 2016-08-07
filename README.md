@@ -26,7 +26,6 @@ public void onClickk(View v){
 }
 ```
 
-
 so:two ways to memorize.
 ```
 buttonname.setOnClickListener(new View.OnClickListener() {
@@ -98,3 +97,21 @@ when rotating, onPause->onStop->onDestroy->onCreate->onStart->onResume
 ######29 Impact of screen rotation
 views do not retain state:TextView,Button  
 Retain:EditText,Checkbox,Switch,RadioButton
+######30 Methods
+i:  
+onStart->onRestoreInstanceState->onResume,onPause-> onSaveInstanceState->onStop
+ii:  
+onConfigurationChanged
+######Use
+```
+protected void onRestoreInstanceState(Bundle saveInstanceState){
+  super.onRestoreInstanceState(saveInstanceState);
+  if(savedInstanceState!=null){
+    btn.setText(savedInstanceState.getString(k));
+  }
+}
+
+protected void onSaveInstanceState(Bundle outState){
+  super.onSaveInstanceState(outState);
+  outState.putString("k",btn.getText().toString());
+}
