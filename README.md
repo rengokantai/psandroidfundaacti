@@ -1,9 +1,9 @@
-#### psandroidfundaacti
-#####1
-######4
+# psandroidfundaacti
+## 1.
+### 4
 Activitiy,Service,Broadcast, Receiver, Content Provider
 
-######12
+### 12
 1:33
 ```
 ptivate static final String TAG = MainActivity.class.getSimpleName();
@@ -45,18 +45,18 @@ public class MainActivity extends Activity implements OnClickListener{
   public void onClick(View v){}
 }
 ```
-######14
+### 14
 3rd way,
 ```
-android:onCick="changeMethod"
+android:onClick="changeMethod"
 ```
 (no parentheses)
 
 
-######16
+### 16
 explicit Intent: target activity is known  
 implicit Intent: target activity is not known....
-######19
+### 19
 ```
 Intent intent = new Intent(MainActivity.this,Second.class);
 Bundle b = new Bundle();
@@ -83,12 +83,12 @@ Intent intent = new Intent(MainActivity.this,Second.class);
 intent.putExtra(k,v);
 startActivity(intent);
 ```
-######23 Exploring Activities
+### 23 Exploring Activities
 onCreate->onStart(visible,but user cannot use)->onResume->Activity Visible->onPause(when calling second)
 (second) onCreate->onStart->onResume->(main)onStop.
 When user quit second, (second)onPause,but still visible to user,(main)onRestart,(second)onStop,onDestroy
 
-#####26 Summary
+### 26 Summary
 onCreate:called when activity is first create,create views,attach layouts(setContentView),init var
 #####
 ######27 Behavior of activity lifecycle when the screen is rotated
@@ -140,3 +140,13 @@ public void onConfigurationChanged(Configuration newConfig{
   }
 }
 ```
+
+## 7. Understanding Activity Lifecycle in Context of Screen Rotation
+### 1 Behavior of Activity Lifecycle
+potrait to landscape:  
+onCreate-onStart-onResume-onPause-onStop-onDestroy
+
+### 3 Impact of Screen Rotation on Views
+
+
+
