@@ -200,7 +200,7 @@ then
 private ImageView imageView;
 imageView
 @Override
-public void onConfigurationChanged(Configuration newConfig{
+public void onConfigurationChanged(Configuration newConfig){
   super.onConfigurationChanged(newConfig);
   Log.i(TAG,"chnaged");
   //change bg image
