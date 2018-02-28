@@ -1,9 +1,14 @@
 # psandroidfundaacti
-## 1.
-### 4
+## 3. Getting Familiar with Building Blocks of Android
+### 1 Introduction
 Activitiy,Service,Broadcast, Receiver, Content Provider
+### 3 Intent and It's Relationship with Activities
 
-### 12
+
+
+
+## 4. Using Activities to Listen to Events
+### 3 Handling Event Inside Activity Using Event Listener Interface
 1:33
 ```
 ptivate static final String TAG = MainActivity.class.getSimpleName();
@@ -11,6 +16,7 @@ Log.i(TAG,"string")
 ```
 set currentMainActivity clicklistener:
 ```
+implement View.OnClickListener()
 button1.setOnClickListener(this); //same
 button1.setOnClickListener(MainActivity.this);
 ```
@@ -26,6 +32,8 @@ public void onClickk(View v){
 }
 ```
 
+
+### 4 Alternate Way to Handle an Event inside Activity
 so:two ways to memorize.
 ```
 buttonname.setOnClickListener(new View.OnClickListener() {
@@ -45,13 +53,15 @@ public class MainActivity extends Activity implements OnClickListener{
   public void onClick(View v){}
 }
 ```
-### 14
+### 5 Handling Event Using onClick Attribute
 3rd way,
 ```
 android:onClick="changeMethod"
 ```
 (no parentheses)
-
+```
+changeMethod(View view)
+```
 
 ## 5. Sharing Data Between Activities Using Explicit Intent
 ### 1 Introduction to Explicit and Implicit Intent
