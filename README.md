@@ -83,14 +83,50 @@ Intent intent = new Intent(MainActivity.this,Second.class);
 intent.putExtra(k,v);
 startActivity(intent);
 ```
-### 23 Exploring Activities
-onCreate->onStart(visible,but user cannot use)->onResume->Activity Visible->onPause(when calling second)
-(second) onCreate->onStart->onResume->(main)onStop.
+
+
+
+
+
+## 6. Exploring Activity Lifecycle
+### 1 Why AppCompatActivity?
+When use AppCompatActivity?
+- If Material Design implementation needed. target below v21
+
+When use FragmentActivity?
+- If nested Fragments needed
+
+Activity
+- None of the above needed
+
+### 2 Exploring Activity Lifecycle
+onCreate->onStart(visible,but user cannot use)->onResume->（Activity Visible）->onPause(when calling second activity)
+(second) onCreate->onStart->onResume->(main activity)onStop.
 When user quit second, (second)onPause,but still visible to user,(main)onRestart,(second)onStop,onDestroy
 
-### 26 Summary
-onCreate:called when activity is first create,create views,attach layouts(setContentView),init var
-#####
+### 3 Demo: Activity Lifecycle
+```
+Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+startActivity(intent);
+```
+### 4 Activity and Stack
+### 5 Summary and Significance of Lifecycle Methods
+onCreate()
+- called when activity is first create,
+- create views
+- attach layouts(setContentView)
+- init field variables and widgets
+
+
+
+
+
+## 7. Understanding Activity Lifecycle in Context of Screen Rotation
+### 1 Behavior of Activity Lifecycle
+potrait to landscape:  
+onCreate-onStart-onResume-onPause-onStop-onDestroy
+
+### 3 Impact of Screen Rotation on Views
 ######27 Behavior of activity lifecycle when the screen is rotated
 when rotating, onPause->onStop->onDestroy->onCreate->onStart->onResume
 
@@ -141,12 +177,7 @@ public void onConfigurationChanged(Configuration newConfig{
 }
 ```
 
-## 7. Understanding Activity Lifecycle in Context of Screen Rotation
-### 1 Behavior of Activity Lifecycle
-potrait to landscape:  
-onCreate-onStart-onResume-onPause-onStop-onDestroy
 
-### 3 Impact of Screen Rotation on Views
 
 
 
