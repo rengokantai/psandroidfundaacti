@@ -53,7 +53,8 @@ android:onClick="changeMethod"
 (no parentheses)
 
 
-### 16
+## 5. Sharing Data Between Activities Using Explicit Intent
+### 1 Introduction to Explicit and Implicit Intent
 explicit Intent: target activity is known  
 implicit Intent: target activity is not known....
 ### 19
