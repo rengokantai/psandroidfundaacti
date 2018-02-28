@@ -57,7 +57,7 @@ android:onClick="changeMethod"
 ### 1 Introduction to Explicit and Implicit Intent
 explicit Intent: target activity is known  
 implicit Intent: target activity is not known....
-### 19
+### 4 Sending Data to Another Activity Using Bundle Directly
 ```
 Intent intent = new Intent(MainActivity.this,Second.class);
 Bundle b = new Bundle();
@@ -78,13 +78,16 @@ Bundle b = intent.getExtras();
 String name = b.getString("name");
 Log.i(TAG,name);
 ```
+
+### 5 Sending Data to Another Activity Using Bundle Indirectly
 intent- second way
 ```
 Intent intent = new Intent(MainActivity.this,Second.class);
 intent.putExtra(k,v);
 startActivity(intent);
 ```
-
+### 6 Summary
+Always declare Activity in Manifest.xml
 
 
 
