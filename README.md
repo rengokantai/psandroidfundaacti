@@ -153,18 +153,20 @@ potrait to landscape:
 onCreate-onStart-onResume-onPause-onStop-onDestroy
 
 ### 3 Impact of Screen Rotation on Views
-######27 Behavior of activity lifecycle when the screen is rotated
-when rotating, onPause->onStop->onDestroy->onCreate->onStart->onResume
-
-######29 Impact of screen rotation
 views do not retain state:TextView,Button  
 Retain:EditText,Checkbox,Switch,RadioButton
-######30 Methods
-i:  
+### 4 Solution One:Restoring Back the Activity State
+Restoring the Activity State:
+- Activity is destroyed and recreated
+- Use onRestoreInstanceState and onSaveInstanceState
+Handling config
+- Activity is not destroyed ```onConfigurationChanged```
+
+
+chart:
 onStart->onRestoreInstanceState->onResume,onPause-> onSaveInstanceState->onStop
-ii:  
-onConfigurationChanged
-######Use
+
+### 5 Solution One Demo: Restoring Back
 ```
 protected void onRestoreInstanceState(Bundle saveInstanceState){
   super.onRestoreInstanceState(saveInstanceState);
@@ -178,7 +180,7 @@ protected void onSaveInstanceState(Bundle outState){
   outState.putString("k",btn.getText().toString());
 }
 ```
-######32
+### 6 Using Seperate Layout
 layout,layout-land
 
 ######33Handling configuration
