@@ -116,6 +116,28 @@ onCreate()
 - create views
 - attach layouts(setContentView)
 - init field variables and widgets
+- Make use of Bundle parameter to retrive previous frozen state.
+
+onStart()
+- Called when Activity is becoming visible to user
+- User interaction not allowed
+
+onResume()
+- User interaction enabled
+- Activity appears at top of Activity Stack
+- Always followed by onPause()
+- Activity is completed in Foreground
+
+onPause()
+- Activity starts to go into Background
+- Manually, save the Persistent data
+
+onStop()
+- User Interaction stops
+- Activity completely in Background
+
+onDestroy()
+- Activity is Destroyed
 
 
 
