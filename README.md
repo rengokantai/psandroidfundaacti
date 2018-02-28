@@ -180,10 +180,16 @@ protected void onSaveInstanceState(Bundle outState){
   outState.putString("k",btn.getText().toString());
 }
 ```
-### 6 Using Seperate Layout
-layout,layout-land
+### 6 Using Seperate Layout for Portrait and Landscape Modes
+layout
+layout-land
+- landscape mode
+- create a new activity_main.xml
 
-######33Handling configuration
+### 7 Solution Two: Handling configuration Changes Yourself
+note
+- Declare android:configChanges attribute in Manifest file under activity
+- override onConfigurationChanged() in Activity class
 not recommended
 ```
 <activity android:name=".MainActivity" android:configChanges="orientation|screenSize">
